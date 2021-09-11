@@ -41,9 +41,9 @@ export class EditEmployeeComponent implements OnInit {
             this.data = res;
             this.employee = this.data;
             this.form = new FormGroup({
-                name: new FormControl(this.employee.name),
-                email: new FormControl(this.employee.email),
-                salary: new FormControl(this.employee.salary),
+                name: new FormControl(this.employee.name, Validators.required),
+                email: new FormControl(this.employee.email, [Validators.required, Validators.email]),
+                salary: new FormControl(this.employee.salary, Validators.required),
             });
         });
     }
