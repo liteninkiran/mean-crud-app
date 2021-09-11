@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar/navbar.component';
 import { EmployeeComponent } from './employee/employee/employee.component';
 import { AddEmployeeComponent } from './employee/add-employee/add-employee.component';
+import { EditEmployeeComponent } from './employee/edit-employee/edit-employee.component';
 
 const appRoutes: Routes = [
     {
@@ -28,6 +29,7 @@ const appRoutes: Routes = [
         NavbarComponent,
         EmployeeComponent,
         AddEmployeeComponent,
+        EditEmployeeComponent,
     ],
     imports: [
         BrowserModule,
