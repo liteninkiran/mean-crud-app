@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
     providedIn: 'root'
@@ -12,18 +13,22 @@ export class EmployeeService {
     }
 
     getData() {
-        return this.httpClient.get('http://localhost:3000/api/employees');
+        return this.httpClient.get(environment.apiUrl + '/employees');
     }
 
     insertData(data: any) {
-        return this.httpClient.post('http://localhost:3000/api/employee/add', data);
+        return this.httpClient.post(environment.apiUrl + '/employee/add', data);
     }
 
     getDataById(id: any) {
-        return this.httpClient.get('http://localhost:3000/api/employee/' + id);
+        return this.httpClient.get(environment.apiUrl + '/employee/' + id);
     }
 
     updateData(id: any, data: any) {
-        return this.httpClient.put('http://localhost:3000/api/employee/' + id, data);
+        return this.httpClient.put(environment.apiUrl + '/employee/' + id, data);
+    }
+
+    deleteData(id: any) {
+        return this.httpClient.delete(environment.apiUrl + '/employee/' + id);
     }
 }
