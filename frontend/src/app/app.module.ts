@@ -21,6 +21,10 @@ const appRoutes: Routes = [
         path: 'add-employee',
         component: AddEmployeeComponent,
     },
+    {
+        path: 'edit-employee/:id',
+        component: EditEmployeeComponent,
+    },
 ];
 
 @NgModule({
