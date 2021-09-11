@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { EmployeeComponent } from './employee/employee/employee.component';
+import { NavbarComponent } from './navbar/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule
