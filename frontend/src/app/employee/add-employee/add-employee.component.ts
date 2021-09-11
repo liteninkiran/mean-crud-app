@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EmployeeService } from 'src/app/service/employee.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-add-employee',
@@ -8,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 
 export class AddEmployeeComponent implements OnInit {
 
-    constructor() { }
+    public form: FormGroup;
+
+    constructor(private employeeService: EmployeeService, private formBuilder: FormBuilder) {
+
+    }
 
     ngOnInit(): void {
+        this.createForm();
+    }
+
+    public createForm() {
+        this.form = this.formBuilder.group({
+            name: ['', Validators.required],
+            email: ['', [Validators.required, Validators.email]],
+            salary: ['', Validators.required],
+        });
+    }
+
+    public insertData() {
+
     }
 
 }

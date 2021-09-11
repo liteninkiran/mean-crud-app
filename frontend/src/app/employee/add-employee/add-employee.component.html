@@ -1,1 +1,29 @@
-<p>add-employee works!</p>
+<div class="container">
+
+    <form (ngSubmit)="insertData()" [formGroup]="form">
+
+        <!-- Name -->
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" class="form-control" formControlName="name">
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" class="form-control" formControlName="email">
+        </div>
+
+        <!-- Salary -->
+        <div class="form-group">
+            <label for="salary">Salary</label>
+            <input type="text" name="salary" class="form-control" formControlName="salary">
+        </div>
+
+        <button class="btn btn-dark btn-sm mt-4">
+            Submit
+        </button>
+
+    </form>
+
+</div>
