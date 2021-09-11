@@ -14,4 +14,8 @@ export class EmployeeService {
     getData() {
         return this.httpClient.get('http://localhost:3000/api/employees');
     }
+
+    insertData(data: any) {
+        return this.httpClient.post('http://localhost:3000/api/employee/add', data);
+    }
 }

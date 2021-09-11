@@ -11,6 +11,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AddEmployeeComponent implements OnInit {
 
     public form: FormGroup;
+    public submitted = false;
+    public data: any;
 
     constructor(private employeeService: EmployeeService, private formBuilder: FormBuilder) {
 
@@ -29,7 +31,19 @@ export class AddEmployeeComponent implements OnInit {
     }
 
     public insertData() {
+        this.submitted = true;
 
+        if (this.form.invalid) {
+            return;
+        }
+
+        this.employeeService.insertData(this.form.value).subscribe(res => {
+            this.data = res;
+        });
+    }
+
+    get f() {
+        return this.form.controls;
     }
 
 }

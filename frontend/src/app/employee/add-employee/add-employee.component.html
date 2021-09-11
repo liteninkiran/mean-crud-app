@@ -5,7 +5,13 @@
         <!-- Name -->
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" name="name" class="form-control" formControlName="name">
+            <input type="text" class="form-control" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors}">
+
+            <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f.name.errors">
+                    Name is required
+                </div>
+            </div>
         </div>
 
         <!-- Email -->
