@@ -63,7 +63,7 @@ router.put('/api/employee/:id', (req, res) => {
 });
 
 // Delete record
-router.delete('/api/employee/delete/:id', (req, res) => {
+router.delete('/api/employee/:id', (req, res) => {
     Employee.findByIdAndRemove(req.params.id, (err, data) => {
         if (!err) {
             res.status(200).json({

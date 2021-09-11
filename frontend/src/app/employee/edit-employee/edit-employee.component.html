@@ -1,1 +1,45 @@
-<p>edit-employee works!</p>
+<div class="container">
+
+    <h1 class="my-4">Update Employee</h1>
+
+    <form (ngSubmit)="updateData()" [formGroup]="form">
+
+        <!-- Name -->
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors}">
+
+            <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f.name.errors">Name is required</div>
+            </div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors}">
+
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f.email.errors.required">Email is required</div>
+                <div *ngIf="submitted && f.email.errors.email">Email is invalid</div>
+            </div>
+        </div>
+
+        <!-- Salary -->
+        <div class="form-group">
+            <label for="salary">Salary</label>
+            <input type="text" class="form-control" formControlName="salary" [ngClass]="{ 'is-invalid': submitted && f.salary.errors}">
+
+            <div *ngIf="submitted && f.salary.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f.salary.errors">Salary is required</div>
+            </div>
+        </div>
+
+
+        <button class="btn btn-dark btn-sm mt-4">
+            Submit
+        </button>
+
+    </form>
+
+</div>
